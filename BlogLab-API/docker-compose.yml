@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+
+ sql.data:
+  image: mcr.microsoft.com/mssql/server:2019-latest
+
+ bloglab.web:
+    image: ${DOCKER_REGISTRY-}bloglabweb
+    build:
+      context: .
+      dockerfile: BlogLab.Web/Dockerfile
